@@ -26,5 +26,10 @@ namespace Ideal
         {
             this.InitializeComponent();
         }
+
+        private void Hamburger_Click(object sender, RoutedEventArgs e)
+        {
+            Split.IsPaneOpen = !Split.IsPaneOpen;
+        }
     }
 }
