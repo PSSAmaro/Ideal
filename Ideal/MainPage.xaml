@@ -50,6 +50,15 @@
         <SplitView.Content>
             <Grid>
                 <TextBlock Text="SplitView Basic" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <CommandBar VerticalAlignment="Bottom">
+                    <AppBarButton Label="Nova Ideia">
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="&#xE82F;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                    <AppBarButton Icon="People" Label="Nova Camp."/>
+                    <AppBarButton Icon="Find" Label="Procurar"/>
+                </CommandBar>
             </Grid>
         </SplitView.Content>
     </SplitView>
