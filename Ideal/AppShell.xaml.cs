@@ -13,23 +13,26 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace Ideal
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class AppShell : Page
     {
-        public MainPage()
+        public AppShell()
         {
             this.InitializeComponent();
         }
 
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        // == return this.frame
+        public Frame AppFrame => this.Frame;
+
+        private void Hamburger_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof (NovaIdeia));
+            Split.IsPaneOpen = !Split.IsPaneOpen;
         }
     }
 }

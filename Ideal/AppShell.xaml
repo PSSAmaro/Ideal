@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="Ideal.AppShell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ideal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <SplitView x:Name="Split" DisplayMode="CompactOverlay" IsPaneOpen="False" OpenPaneLength="200">
+        <SplitView.Pane>
+            <StackPanel>
+                <Button x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="48" Height="48" Background="Transparent" Click="Hamburger_Click"/>
+                <ListView>
+                    <ListView.Items>
+                        <ListViewItem IsSelected="True">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE80F;</TextBlock>
+                                <TextBlock>Página Principal</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE70F;</TextBlock>
+                                <TextBlock>As suas Ideias</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE208;</TextBlock>
+                                <TextBlock>Subscrições</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE13D;</TextBlock>
+                                <TextBlock>Conta</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE713;</TextBlock>
+                                <TextBlock>Definições</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView.Items>
+                </ListView>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Frame Grid.Row="1" x:Name="Frame"/>
+        </SplitView.Content>
+    </SplitView>
+</Page>
