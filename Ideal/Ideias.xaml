@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="Ideal.Ideias"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ideal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock FontSize="48" Text="Ideias" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        
+        <ListBox Name="IdeiaList" SelectionChanged="IdeiaList_OnSelectionChanged" SelectionMode="Single">
+            <ListBoxItem Name="Ideia1">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Name="IdeiaTitulo" Text="DB do caralho..."></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="IdeiaAutor" Text=" Eduardo Câmara"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="IdeiaHora1" FontStyle="Italic" Text="Submetida às 18:17 do dia 10/01/2016"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Name="Ideia2" Margin="0,10,0,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="IdeiaTitulo2" Text="Caga nisso"></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="IdeiaAutor2" Text=" Luís Canha"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="IdeiaHora2" FontStyle="Italic" Text="Submetida às 18:19 do dia 10/01/2016"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Name="Ideia3" Margin="0,10,0,0">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="IdeiaTitulo3" Text="Fodassi!"></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="IdeiaAutor3" Text=" Davidi"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="IdeiaHora3" FontStyle="Italic" Text="Submetida às 18:19 do dia 10/01/2016"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+    </StackPanel>
+</Page>

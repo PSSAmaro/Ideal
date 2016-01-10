@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="Ideal.Conta"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ideal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock FontSize="100" Text="Visão Geral" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Tipo de subscrição:"></TextBlock>
+            <TextBlock Grid.Column="1"></TextBlock>
+            
+            <TextBlock Grid.Row="1" Text="Número de ideias submetidas:"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1"></TextBlock>
+            
+            <TextBlock Grid.Row="2" Text="Número de subscrições:"></TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="1"></TextBlock>
+            
+            <TextBlock Grid.Row="3" Text="Campanhas presentes:"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1"></TextBlock>
+            
+            <TextBlock Grid.Row="4" Text="Pontuação:"></TextBlock>
+            <TextBlock Grid.Row="4" Grid.Column="1"></TextBlock>
+            
+            <TextBlock Grid.Row="5" Text="Ranking:"></TextBlock>
+            <TextBlock Grid.Row="5" Grid.Column="1"></TextBlock>
+            
+            <TextBlock Grid.Row="6" Text=""></TextBlock>
+            <TextBlock Grid.Row="6" Grid.Column="1"></TextBlock>
+        </Grid>
+    </StackPanel>
+</Page>

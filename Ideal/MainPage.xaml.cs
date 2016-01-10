@@ -25,11 +25,48 @@ namespace Ideal
         public MainPage()
         {
             this.InitializeComponent();
+            MyFrame.Navigate(typeof (Homepage));
         }
 
         private void Hamburger_Click(object sender, RoutedEventArgs e)
         {
             Split.IsPaneOpen = !Split.IsPaneOpen;
+        }
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if(MyFrame.CanGoBack)
+                MyFrame.GoBack();
+        }
+
+        private void FowardButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            if(MyFrame.CanGoForward)
+                MyFrame.GoForward();
+        }
+
+        private void Selector_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (HomeMenu.IsSelected)
+            {
+                MyFrame.Navigate(typeof (Homepage));
+            }
+            else if (IdeiasMenu.IsSelected)
+            {
+                MyFrame.Navigate(typeof (Ideias));
+            }
+            else if (SubscricoesMenu.IsSelected)
+            {
+                MyFrame.Navigate(typeof (Subscricoes));
+            }
+            else if (ContaMenu.IsSelected)
+            {
+                MyFrame.Navigate(typeof (Conta));
+            }
+            else if (DefinicoesMenu.IsSelected)
+            {
+                MyFrame.Navigate(typeof (Definicoes));
+            }
         }
     }
 }

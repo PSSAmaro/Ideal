@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ServiceModel;
+using SQLite;
+using SQLite.Core;
+using SQLite.Net;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -15,6 +20,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.WindowsAzure.Management.Sql;
+using Microsoft.WindowsAzure.Management.Sql.Models;
 
 namespace Ideal
 {
@@ -70,6 +77,15 @@ namespace Ideal
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+
+                // Register a handler for BackRequested events and set the
+                // visibility of the Back button
+                SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
+
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                    rootFrame.CanGoBack ?
+                    AppViewBackButtonVisibility.Visible :
+                    AppViewBackButtonVisibility.Collapsed;            
             }
 
             if (rootFrame.Content == null)
@@ -77,10 +93,16 @@ namespace Ideal
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(Login), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
+
+            /*DbConnectionStringBuilder builder = new DbConnectionStringBuilder();
+
+            builder.ConnectionString = "server=eu-cdbr-azure-west-d.cloudapp.net;user id=b2a5a1e5267e18;" + "password=d55d182a; initial catalog=AdventureWorks";
+
+            SQLiteConnection connection;*/
         }
 
         /// <summary>
@@ -113,6 +135,17 @@ namespace Ideal
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private void OnBackRequested(object sender, BackRequestedEventArgs e)
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame.CanGoBack)
+            {
+                e.Handled = true;
+                rootFrame.GoBack();
+            }
         }
     }
 }

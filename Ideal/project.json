@@ -1,9 +1,13 @@
 ﻿{
   "dependencies": {
-    "Microsoft.ApplicationInsights": "1.0.0",
-    "Microsoft.ApplicationInsights.PersistenceChannel": "1.0.0",
-    "Microsoft.ApplicationInsights.WindowsApps": "1.0.0",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+    "EntityFramework": "6.1.3",
+    "Microsoft.ApplicationInsights": "1.2.3",
+    "Microsoft.ApplicationInsights.PersistenceChannel": "1.2.3",
+    "Microsoft.ApplicationInsights.WindowsApps": "1.1.1",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
+    "Microsoft.WindowsAzure.Management.Sql": "5.2.0",
+    "SQLite.Core.UAP": "3.8.11.158",
+    "SQLiteWrapperUWP-PCL": "1.0.0.4"
   },
   "frameworks": {
     "uap10.0": {}

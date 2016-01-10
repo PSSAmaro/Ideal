@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="Ideal.Registo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ideal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <Image Stretch="Uniform" Source="Assets/logo.gif" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Margin="20,20,0,0" Text="Insira o seu nome de utilizador:" VerticalAlignment="Center"></TextBlock>
+            <TextBox Grid.Column="1" Name="UserRegisto" VerticalContentAlignment="Center"></TextBox>
+
+            <TextBlock Grid.Row="1" Margin="20,20,0,0" Text="Insira a sua password:"></TextBlock>
+            <PasswordBox Grid.Row="1" Grid.Column="1" Name="PassRegisto" PlaceholderText="Password" Margin="0,20,0,0" VerticalContentAlignment="Center"></PasswordBox>
+
+            <TextBlock Grid.Row="2" Margin="20,20,0,0" Text="Reintroduza a password:"></TextBlock>
+            <PasswordBox Grid.Row="2" Grid.Column="1" Name="ConfirmaPassRegisto" PlaceholderText="Password" Margin="0,20,0,0" VerticalContentAlignment="Center"></PasswordBox>
+
+            <Button Grid.Row="3" Grid.Column="1" Name="ConfirmaRegisto" Margin="0,20,0,0" Content="Registar" HorizontalAlignment="Center" Click="ConfirmaRegisto_OnClick" VerticalContentAlignment="Center"></Button>
+        </Grid>
+
+    </StackPanel>
+</Page>

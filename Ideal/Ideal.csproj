@@ -99,10 +99,35 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Ideia.cs" />
+    <Compile Include="Conta.xaml.cs">
+      <DependentUpon>Conta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definicoes.xaml.cs">
+      <DependentUpon>Definicoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Homepage.xaml.cs">
+      <DependentUpon>Homepage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ideias.xaml.cs">
+      <DependentUpon>Ideias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ligacao.cs" />
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registo.xaml.cs">
+      <DependentUpon>Registo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Subscricoes.xaml.cs">
+      <DependentUpon>Subscricoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateIdeia.xaml.cs">
+      <DependentUpon>TemplateIdeia.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -111,6 +136,7 @@
     <None Include="Ideal_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\logo.gif" />
     <Content Include="Assets\Square71x71Logo.scale-100.png" />
     <Content Include="Assets\Square71x71Logo.scale-125.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -127,10 +153,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Conta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definicoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Homepage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ideias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Registo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Subscricoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TemplateIdeia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.UAP.2015, Version=3.10.0">
+      <Name>SQLite for Universal App Platform</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

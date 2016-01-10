@@ -11,33 +11,33 @@
         <SplitView.Pane>
             <StackPanel>
                 <Button x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="48" Height="48" Background="Transparent" Click="Hamburger_Click"/>
-                <ListView>
+                <ListView SelectionMode="Single" SelectionChanged="Selector_OnSelectionChanged">
                     <ListView.Items>
-                        <ListViewItem IsSelected="True">
+                        <ListViewItem Name="HomeMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE80F;</TextBlock>
                                 <TextBlock>Página Principal</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="IdeiasMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE70F;</TextBlock>
                                 <TextBlock>As suas Ideias</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="SubscricoesMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE208;</TextBlock>
                                 <TextBlock>Subscrições</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="ContaMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE13D;</TextBlock>
                                 <TextBlock>Conta</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="DefinicoesMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE713;</TextBlock>
                                 <TextBlock>Definições</TextBlock>
@@ -49,8 +49,23 @@
         </SplitView.Pane>
         <SplitView.Content>
             <Grid>
-                <TextBlock Text="SplitView Basic" FontSize="54" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <CommandBar VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <RelativePanel Grid.Row="0">
+                    <Button Name="BackButton" Width="48" Height="48" RelativePanel.AlignLeftWithPanel="True" FontFamily="Segoe MDL2 Assets" Content="&#xE0A6;" Click="BackButton_OnClick"></Button>
+                    <Button Name="FowardButton" Width="48" Height="48" RelativePanel.RightOf="BackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE0AB;" Click="FowardButton_OnClick"></Button>
+                    <TextBlock Name="CurrentPage"></TextBlock>
+                    <TextBox Name="SearchBox" Width="200" Height="48" FontSize="28" VerticalContentAlignment="Center" PlaceholderText="Procurar" RelativePanel.LeftOf="SearchButton"></TextBox>
+                    <Button Name="SearchButton" Width="48" Height="48" FontFamily="Segoe MDL2 Assets" Content="&#xE11A;" RelativePanel.AlignRightWithPanel="True"></Button>
+                </RelativePanel>
+                
+                <Frame Name="MyFrame" Grid.Row="1"></Frame>
+                
+                <CommandBar VerticalAlignment="Bottom" Grid.Row="2">
                     <AppBarButton Label="Nova Ideia">
                         <AppBarButton.Icon>
                             <FontIcon Glyph="&#xE82F;"/>
@@ -59,6 +74,7 @@
                     <AppBarButton Icon="People" Label="Nova Camp."/>
                     <AppBarButton Icon="Find" Label="Procurar"/>
                 </CommandBar>
+                
             </Grid>
         </SplitView.Content>
     </SplitView>
