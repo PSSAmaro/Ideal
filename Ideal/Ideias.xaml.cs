@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data.Odbc;
+using System.Data.OleDb;
+using System.Data.Sql;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,6 +17,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Devart.Data.MySql;
+using Microsoft.WindowsAzure.Management.Sql.Models;
+//using SQLite.Net;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -62,5 +69,12 @@ namespace Ideal
                 IdeiaList.Items.Add(stckV);
             }
         }*/
+
+        public void CreateSqlConnection()
+        {
+            string myConnString1 = "User Id=sa;Password=d55d182a;Server=eu-cdbr-azure-west-d.cloudapp.net, 3306";
+            SqlConnection myConnection1 = new SqlConnection(myConnString1);
+            myConnection1.Close();
+        }
     }
 }
