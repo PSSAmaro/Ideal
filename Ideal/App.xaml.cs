@@ -74,10 +74,25 @@ namespace Ideal
 
             if (shell.AppFrame.Content == null)
             {
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                shell.AppFrame.Navigate(typeof(MainPage), e.Arguments);
+                // Ligar-se à BD local
+                BDLocal.BDSingleton.Ligar();
+                // Criar tabela e utilizador falso, caso não existam
+                BDLocal.BDSingleton.conn.CreateTable<BDLocal.Sessao>();
+                var adicionar = BDLocal.BDSingleton.conn.InsertOrIgnore(new BDLocal.Sessao()
+                {
+                    Id = 1,
+                    Login = false
+                });
+
+                BDLocal.Sessao s = (from p in BDLocal.BDSingleton.conn.Table<BDLocal.Sessao>()
+                                    where p.Id == 1
+                                    select p).FirstOrDefault();
+
+                // Se existirem dados guardados, ir para a página de início de sessão automático, caso contrário, página de inserir dados
+                if(s.Login)
+                    shell.AppFrame.Navigate(typeof(LoginPage), e.Arguments);
+                else
+                    shell.AppFrame.Navigate(typeof(LoginForm), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();

@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="Ideal.Campanhas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ideal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+            <TextBlock x:Name="title" Style="{ThemeResource PageTitleTextBlockStyle}" Text="CAMPANHAS"/>
+        </Grid>
+        <ListBox Grid.Row="1" Name="CampanhaList" SelectionMode="Single">
+            <ListBoxItem Name="Campanha1">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Name="CampanhaTitulo1" Text="Campanha1"></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="CampanhaAutor1" Text=" Eduardo Câmara"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="CampanhaSubs1" FontStyle="Italic" Text="Subscrita por 18 utilizadores" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Name="CampanhaHora1" FontStyle="Italic" Text="Submetida às 20:09 do dia 10/01/2016" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Name="Campanha2">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Name="CampanhaTitulo2" Text="Campanha2"></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="CampanhaAutor2" Text=" Paulo Amaro"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="CampanhaSubs2" FontStyle="Italic" Text="Subscrita por 69 utilizadores" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Name="CampanhaHora2" FontStyle="Italic" Text="Submetida às 10:11 do dia 10/01/2016" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Name="Campanha3">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Name="CampanhaTitulo3" Text="Campanha3"></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="CampanhaAutor3" Text=" Luís Canha"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="CampanhaSubs3" FontStyle="Italic" Text="Subscrita por 3 utilizadores" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Name="CampanhaHora3" FontStyle="Italic" Text="Submetida às 10:13 do dia 11/01/2016" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+            <ListBoxItem Name="Campanha4">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Name="CampanhaTitulo4" Text="Campanha4"></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Name="CampanhaAutor4" Text=" Davidi"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="CampanhaSubs4" FontStyle="Italic" Text="Subscrita por 0 utilizadores" TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Name="CampanhaHora4" FontStyle="Italic" Text="Submetida às 10:14 do dia 11/01/2016" TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+    </Grid>
+</Page>

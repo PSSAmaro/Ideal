@@ -101,14 +101,61 @@
     <Compile Include="AppShell.xaml.cs">
       <DependentUpon>AppShell.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BDLocal\BDSingleton.cs" />
+    <Compile Include="BDLocal\Sessao.cs" />
+    <Compile Include="Campanhas.xaml.cs">
+      <DependentUpon>Campanhas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Campanha.cs" />
+    <Compile Include="Classes\Comentario.cs" />
+    <Compile Include="Classes\ComentarioFactory.cs" />
+    <Compile Include="Classes\Estado\EstadoIdeia.cs" />
+    <Compile Include="Classes\Estado\AImplementar.cs" />
+    <Compile Include="Classes\Estado\Implementado.cs" />
+    <Compile Include="Classes\Estado\Descartado.cs" />
+    <Compile Include="Classes\Estado\EmAnalise.cs" />
+    <Compile Include="Classes\Estado\Pendente.cs" />
     <Compile Include="Classes\Ideia.cs" />
+    <Compile Include="Classes\IdeiaFactory.cs" />
+    <Compile Include="Classes\Pessoa.cs" />
+    <Compile Include="Classes\PessoaFactory.cs" />
+    <Compile Include="Classes\Tag.cs" />
+    <Compile Include="Classes\Tipo\Cliente.cs" />
+    <Compile Include="Classes\Tipo\Colaborador.cs" />
+    <Compile Include="Classes\Tipo\Gestor.cs" />
+    <Compile Include="Classes\Tipo\Executivo.cs" />
+    <Compile Include="Classes\Tipo\TipoPessoa.cs" />
+    <Compile Include="Conta.xaml.cs">
+      <DependentUpon>Conta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Definicoes.xaml.cs">
+      <DependentUpon>Definicoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ideias.xaml.cs">
+      <DependentUpon>Ideias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.xaml.cs">
+      <DependentUpon>LoginForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NovaCampanha.xaml.cs">
+      <DependentUpon>NovaCampanha.xaml</DependentUpon>
     </Compile>
     <Compile Include="NovaIdeia.xaml.cs">
       <DependentUpon>NovaIdeia.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subscricoes.xaml.cs">
+      <DependentUpon>Subscricoes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VerIdeia.xaml.cs">
+      <DependentUpon>VerIdeia.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -117,6 +164,8 @@
     <None Include="Ideal_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\logo.gif" />
+    <Content Include="Assets\pcampos.jpg" />
     <Content Include="Assets\Square71x71Logo.scale-100.png" />
     <Content Include="Assets\Square71x71Logo.scale-125.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -137,9 +186,37 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Campanhas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Conta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Definicoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ideias.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NovaCampanha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NovaIdeia.xaml">
       <SubType>Designer</SubType>
@@ -149,6 +226,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Subscricoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VerIdeia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="SQLite.UAP.2015, Version=3.10.0">
+      <Name>SQLite for Universal App Platform</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

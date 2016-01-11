@@ -5,83 +5,35 @@
     xmlns:local="using:Ideal"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:classes="using:Ideal.Classes"
     mc:Ignorable="d">
 
-    <Grid VerticalAlignment="Bottom">
+    <Grid VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-            <TextBlock x:Name="title" Style="{ThemeResource PageTitleTextBlockStyle}" Text="PÁGINA PRINCIPAL"/>
+            <TextBlock x:Name="title" Style="{ThemeResource PageTitleTextBlockStyle}" Text="TENDÊNCIAS"/>
         </Grid>
-        <ListView Grid.Row="1">
-            <ListView.Items>
-                <ListViewItem>
-                    <TextBlock>Ideia 1</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 2</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 3</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 4</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 5</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 6</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 7</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 8</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 9</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 1</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 2</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 3</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 4</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 5</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 6</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 7</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 8</TextBlock>
-                </ListViewItem>
-                <ListViewItem>
-                    <TextBlock>Ideia 9</TextBlock>
-                </ListViewItem>
-            </ListView.Items>
+        <ListView Name="Trends" Grid.Row="1" IsItemClickEnabled="True" ItemClick="List_Click">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Titulo}"></TextBlock>
+                            <TextBlock Text=" por "></TextBlock>
+                            <TextBlock Text="{Binding Autor.Nome}"></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontStyle="Italic" Text="Submetida às "></TextBlock>
+                            <TextBlock FontStyle="Italic" Text="{Binding Hora}"></TextBlock>
+                            <TextBlock FontStyle="Italic" Text=" do dia "></TextBlock>
+                            <TextBlock FontStyle="Italic" Text="{Binding Dia}"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <CommandBar Grid.Row="2" VerticalAlignment="Bottom">
-            <AppBarButton Label="Nova Ideia">
-                <AppBarButton.Icon>
-                    <FontIcon Glyph="&#xE82F;"/>
-                </AppBarButton.Icon>
-            </AppBarButton>
-            <AppBarButton Icon="People" Label="Nova Camp."/>
-            <AppBarButton Icon="Find" Label="Procurar"/>
-        </CommandBar>
     </Grid>
 </Page>

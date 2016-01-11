@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="Ideal.Subscricoes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ideal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+            <TextBlock x:Name="title" Style="{ThemeResource PageTitleTextBlockStyle}" Text="SUBSCRIÇÕES"/>
+        </Grid>
+        <ListView Grid.Row="1">
+            <ListViewItem>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="DB..."></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Text=" Eduardo Câmara"></TextBlock>
+                    </StackPanel>
+                    <TextBlock FontStyle="Italic" Text="Submetida às 18:17 do dia 10/01/2016"></TextBlock>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="DB..."></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Text=" Eduardo Câmara"></TextBlock>
+                    </StackPanel>
+                    <TextBlock FontStyle="Italic" Text="Submetida às 18:17 do dia 10/01/2016"></TextBlock>
+                </StackPanel>
+            </ListViewItem>
+            <ListViewItem>
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="DB..."></TextBlock>
+                        <TextBlock Text=" por "></TextBlock>
+                        <TextBlock Text=" Eduardo Câmara"></TextBlock>
+                    </StackPanel>
+                    <TextBlock FontStyle="Italic" Text="Submetida às 18:17 do dia 10/01/2016"></TextBlock>
+                </StackPanel>
+            </ListViewItem>
+        </ListView>
+    </Grid>
+</Page>

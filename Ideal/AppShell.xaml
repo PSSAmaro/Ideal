@@ -11,33 +11,39 @@
         <SplitView.Pane>
             <StackPanel>
                 <Button x:Name="Hamburger" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="48" Height="48" Background="Transparent" Click="Hamburger_Click"/>
-                <ListView>
+                <ListView SelectionMode="Single" SelectionChanged="Selector_OnSelectionChanged">
                     <ListView.Items>
-                        <ListViewItem IsSelected="True">
+                        <ListViewItem Name="HomeMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE80F;</TextBlock>
                                 <TextBlock>Página Principal</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="IdeiasMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE70F;</TextBlock>
                                 <TextBlock>As suas Ideias</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="CampanhasMenu">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE748;</TextBlock>
+                                <TextBlock>As suas Campanhas</TextBlock>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Name="SubscricoesMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE208;</TextBlock>
                                 <TextBlock>Subscrições</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="ContaMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE13D;</TextBlock>
                                 <TextBlock>Conta</TextBlock>
                             </StackPanel>
                         </ListViewItem>
-                        <ListViewItem>
+                        <ListViewItem Name="DefinicoesMenu">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontFamily="Segoe MDL2 Assets" Margin="5,2,20,0">&#xE713;</TextBlock>
                                 <TextBlock>Definições</TextBlock>
@@ -48,7 +54,28 @@
             </StackPanel>
         </SplitView.Pane>
         <SplitView.Content>
-            <Frame Grid.Row="1" x:Name="Frame"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Frame Navigated="OnNavigatedToPage" Grid.Row="0" x:Name="Frame"/>
+                <CommandBar Grid.Row="1" VerticalAlignment="Bottom">
+                    <AppBarButton Click="NovaIdeia_Click" Label="Nova Ideia">
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="&#xE82F;"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                    <AppBarButton Click="NovaCampanha_Click" Icon="People" Label="Nova Camp."/>
+                    <AppBarButton Icon="Find" Label="Procurar">
+                        <AppBarButton.Flyout>
+                            <Flyout>
+                                <SearchBox MinWidth="200" Name="ProcuraBox"></SearchBox>
+                            </Flyout>
+                        </AppBarButton.Flyout>
+                    </AppBarButton>
+                </CommandBar>
+            </Grid>
         </SplitView.Content>
     </SplitView>
 </Page>

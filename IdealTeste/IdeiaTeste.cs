@@ -12,6 +12,8 @@ namespace IdealTeste
     [TestClass]
     public class IdeiaTeste
     {
+        // Teste velho
+
         private bool Data(DateTime data)
         {
             // Para o caso do teste ser feito em cima da viragem do segundo (Procurar melhor maneira de testar a data)
@@ -36,7 +38,7 @@ namespace IdealTeste
         [TestMethod]
         public void IdeiaSimplesTeste()
         {
-            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia");
+            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia", DateTime.Now);
 
             Assert.AreEqual("Ideia", ideia.Titulo);
             Assert.AreEqual("Conteúdo da ideia", ideia.Conteudo);
@@ -48,7 +50,7 @@ namespace IdealTeste
         [TestMethod]
         public void PartilhaIdeiaTeste()
         {
-            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia");
+            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia", DateTime.Now);
 
             ideia.Partilhar();
 
@@ -58,7 +60,7 @@ namespace IdealTeste
         [TestMethod]
         public void MudaEstadoIdeiaTeste()
         {
-            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia");
+            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia", DateTime.Now);
 
             Assert.AreEqual(ideia.Estado, (int)Ideia.LEstado.Pendente);
 
@@ -78,7 +80,7 @@ namespace IdealTeste
         [TestMethod]
         public void EditaIdeiaTeste()
         {
-            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia");
+            Ideia ideia = new Ideia("Ideia", "Conteúdo da ideia", DateTime.Now);
 
             ideia.Titulo = "Ideia modificada";
             ideia.Conteudo = "Conteúdo modificado";
